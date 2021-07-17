@@ -6,7 +6,7 @@
 @import url("./__form-control/modal__form-control.css");
 @import url("./__form-control/_error/modal__form-control_error.css");
 @import url("./__close-button/modal__close-button.css");
-@import url("./__close-button/_preview/modal__close-button_preview.css");
+@import url("./__close-button/_type/_image/modal__close-button_type_image.css");
 @import url("./__image-title/modal__image-title.css");
 @import url("./__error/modal__error.css");
 @import url("./__form-submit/modal__form-submit.css");
