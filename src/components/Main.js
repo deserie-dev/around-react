@@ -37,14 +37,14 @@ function Main (props) {
     <section className="profile">
         
       <div className="profile__avatar">
-        <img className="profile__image" src={userAvatar} alt="Profile Picture" />
+        <img className="profile__image" src={userAvatar} alt="Avatar" />
         <button className="profile__image-edit" onClick={props.onEditAvatarClick}></button>
       </div>
 
       <div className="profile__content">
         <div className="profile__details">
           <h1 className="profile__name">{userName}</h1>
-          <button type="button" aria-label="edit button" className="profile__edit"></button>
+          <button type="button" aria-label="edit button" className="profile__edit" onClick={props.onEditProfileClick}></button>
         </div>
         <p className="profile__occupation">{userDescription}</p>
       </div>
@@ -65,7 +65,7 @@ function Main (props) {
               onCardClick={props.onCardClick}
             />
           )
-        })}
+        })} 
       </ul>  
     </section>
     </main>
