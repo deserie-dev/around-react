@@ -1,3 +1,6 @@
+@import url("./_visible/elements__delete-button_visible.css");
+@import url("./_hidden/elements__delete-button_hidden.css");
+
 .elements__delete-button {
   background: url(../../../images/deleteButton.svg);
   border: none;
