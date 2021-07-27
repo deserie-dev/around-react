@@ -7,6 +7,7 @@ import EditAvatarPopup from './EditAvatarPopup.js';
 import EditProfilePopup from './EditProfilePopup.js';
 import DeleteCardPopup from './DeleteCardPopup.js';
 import ImagePopup from './ImagePopup';
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
@@ -56,43 +57,45 @@ function App() {
   }
 
   return (
-    <div className="root">
-      <Header />
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="root">
+        <Header />
 
-      <Main
-        onEditAvatarClick={handleEditAvatarClick} 
-        onEditProfileClick={handleEditProfileClick} 
-        onAddPlaceClick={handleAddPlaceClick} 
-        onCardDelete={handleDeleteCardClick}
-        onCardClick={handleCardClick} 
-        onClose={closeAllPopups}
-      />
+        <Main
+          onEditAvatarClick={handleEditAvatarClick} 
+          onEditProfileClick={handleEditProfileClick} 
+          onAddPlaceClick={handleAddPlaceClick} 
+          onCardDelete={handleDeleteCardClick}
+          onCardClick={handleCardClick} 
+          onClose={closeAllPopups}
+        />
 
-      <Footer />
+        <Footer />
 
-      <AddPlacePopup 
-        isOpen={isAddPlacePopupOpen}
-        onClose={closeAllPopups}
-      />
+        <AddPlacePopup 
+          isOpen={isAddPlacePopupOpen}
+          onClose={closeAllPopups}
+        />
 
-      <EditAvatarPopup 
-        isOpen={isEditAvatarPopupOpen}
-        onClose={closeAllPopups}
-      />
+        <EditAvatarPopup 
+          isOpen={isEditAvatarPopupOpen}
+          onClose={closeAllPopups}
+        />
 
-      <EditProfilePopup 
-        isOpen={isEditProfilePopupOpen}
-        onClose={closeAllPopups}
-      />
+        <EditProfilePopup 
+          isOpen={isEditProfilePopupOpen}
+          onClose={closeAllPopups}
+        />
 
-      <DeleteCardPopup
-        isOpen={isDeleteCardPopupOpen}
-        onClose={closeAllPopups}
-      />
+        <DeleteCardPopup
+          isOpen={isDeleteCardPopupOpen}
+          onClose={closeAllPopups}
+        />
 
-      <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
+        <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
 
-    </div>  
+      </div>  
+    </CurrentUserContext.Provider>
   );
 }
 
