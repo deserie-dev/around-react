@@ -14,6 +14,18 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isDeleteCardPopupOpen, setIsDeleteCardOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState();
+  const [currentUser, setCurrentUser] = React.useState({});
+
+//Get user info from the server
+  React.useEffect(() => {
+    api.getUserInfo()
+      .then((res) => {
+        setCurrentUser(res)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  },[])
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
