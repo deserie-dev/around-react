@@ -7,6 +7,7 @@ import EditAvatarPopup from './EditAvatarPopup.js';
 import EditProfilePopup from './EditProfilePopup.js';
 import DeleteCardPopup from './DeleteCardPopup.js';
 import ImagePopup from './ImagePopup';
+import api from '../utils/api.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function App() {
@@ -16,6 +17,17 @@ function App() {
   const [isDeleteCardPopupOpen, setIsDeleteCardOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState();
   const [currentUser, setCurrentUser] = React.useState({});
+
+  function handleUpdateUser(values) {
+    api.editProfile(values)
+      .then((values) => {
+        setCurrentUser(values)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
 
 //Get user info from the server
   React.useEffect(() => {
