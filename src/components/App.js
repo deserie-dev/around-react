@@ -28,6 +28,19 @@ function App() {
       })
   }
 
+  function handleUpdateAvatar(avatar) {
+    api.updateAvatar(avatar)
+      .then((avatar) => {
+        setCurrentUser(avatar)
+      })
+      .then(()=> {
+        setIsEditAvatarPopupOpen(false)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
 
 //Get user info from the server
   React.useEffect(() => {
@@ -92,6 +105,7 @@ function App() {
         <EditAvatarPopup 
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
+          onUpdateAvatar={handleUpdateAvatar}
         />
 
         <EditProfilePopup 
