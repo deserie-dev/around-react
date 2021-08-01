@@ -6,24 +6,6 @@ function Main (props) {
 
   const currentUser = React.useContext(CurrentUserContext);
 
-  function handleCardLike(card) {
-    // Check one more time if this card was already liked
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-    
-    // Send a request to the API and getting the updated card data
-    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-    });
-}
-
-  function handleCardDelete(card) {
-  api.deleteCard(card._id)
-    .then(() => {
-      const deleteCard = cards.filter((c) => c._id !== card._id);
-      setCards(deleteCard)
-    })
-  }
-
   return (
     <main className="content">
 
