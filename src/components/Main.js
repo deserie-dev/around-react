@@ -31,12 +31,14 @@ function Main (props) {
         {props.cards.map((card) => {
           return (
             <Card 
-              key={card._id} 
               card={card}
+              key={card._id} 
               name={card.name} 
               id={card._id} 
               link={card.link} 
-              likes={card.likes.length}  
+              likes={card.likes}
+              onCardDelete={props.onCardDelete}
+              onCardLike={props.onCardLike}  
               onCardClick={props.onCardClick}
             />
           )

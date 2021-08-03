@@ -34,7 +34,7 @@ function Card(props) {
           <h2 className="elements__title">{props.name}</h2>
           <div className="elements__like-container">
             <button className={cardLikeButtonClassName} type="button" aria-label="like button" onClick={handleLikeClick}></button>
-            <p className="elements__like-counter">{props.likes}</p>
+            <p className="elements__like-counter">{props.likes.length}</p>
         </div>
       </div>
     </li>
