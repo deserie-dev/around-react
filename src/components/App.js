@@ -154,7 +154,6 @@ function App() {
           onAddPlaceClick={handleAddPlaceClick} 
           onCardLike={handleCardLike}
           onCardDelete={handleDeleteCardClick}
-          // key={handleDeleteCard}
           onCardClick={handleCardClick} 
           cards={cards}
           onClose={closeAllPopups}
