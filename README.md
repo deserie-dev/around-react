@@ -34,4 +34,10 @@
 
 ---
 
+3. Logged into my Jenkins instance and installed the SSH plugin. Added credentials (private key) and set up SSH profile for the webserver.
+
+![](/images/jenkins-1.png)
+
+---
+
 ### _This is a React version a [previous project](https://github.com/deserie-dev/web_project_4) that I made using advanced JavaScript_
