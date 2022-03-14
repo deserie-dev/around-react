@@ -30,4 +30,8 @@
 
 ---
 
+2. Configured my Jenkins server and the webserver using 2 Ansible playbooks - provision_jenkins.yaml and provision_webserver.yaml. These can be found in the Infrastructure folder, under ansible.
+
+---
+
 ### _This is a React version a [previous project](https://github.com/deserie-dev/web_project_4) that I made using advanced JavaScript_
