@@ -40,4 +40,14 @@
 
 ---
 
+4. Created a Dockerfile, built and pushed the image to Docker Hub. Back inside my Jenkins server I created a new Freestyle job, added a build step ('Execute shell script on remote host using SSH'), and entered a _docker run_ command to start up my container based off the image on Docker Hub.
+
+![](/images/docker-1.png)
+
+![](/images/docker-2.png)
+
+![](/images/jenkins-2.png)
+
 ### _This is a React version a [previous project](https://github.com/deserie-dev/web_project_4) that I made using advanced JavaScript_
+
+_Because of cost, all AWS resources have since been destroyed and the site is now hosted on Netlify_
